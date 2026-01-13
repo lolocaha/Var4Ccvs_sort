@@ -1,10 +1,10 @@
 import csv
 c = []
-with open('po.csv','r',encoding='utf8') as f: #открываем файл
+with open('po.csv','r',encoding='utf-8-sig') as f: #открываем файл
     csvreader = csv.DictReader(f,delimiter=',') #с помоью dictreader даем программе названия заголовков
     for row in csvreader: #проходим по каждому значению под заголовками
         record = {
-        'Фамилия': row['\ufeffФамилия'],
+        'Фамилия': row['Фамилия'],
         'Имя': row['Имя'],
         'Отчество': row['Отчество'],
         'Регистрационный номер': row['Регистрационный номер'],
@@ -80,6 +80,7 @@ else:
     bubble_sort(year,zad3)#сортируем и выводим значения
     for i in year:
         print(i)
+
 
 
 
