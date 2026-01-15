@@ -68,12 +68,13 @@ def report2(owners): #Меню для 2 задания
         print('Людей с таким автомобилем нет')
     else:
         bubble_sort(vaz_owners,task2)#сортируем и выводим значение
-        with open('VAZ_owners', mode='w', newline='') as fi:
+        with open('VAZ_owners.csv', mode='w', newline='') as fi:
             writer=csv.writer(fi)
             for row in vaz_owners:
                 secondtask = []
                 secondtask.append(row)
                 writer.writerow(secondtask)
+            fi.close()
             if os.path.exists('VAZ_owners.csv'):
                 print('Файл VAZ_owners.csv создан')
 
@@ -131,6 +132,7 @@ def main(): #Функция для интерфейса меню
         print(input('Для продолжения нажмите Enter'))
 if __name__ == '__main__':
     main()
+
 
 
 
